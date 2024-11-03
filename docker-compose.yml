@@ -35,6 +35,17 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
 
+  data-processor:
+    build: .
+    container_name: data-processor
+    depends_on:
+      - postgres
+    volumes:
+      - ./scripts:/app/scripts
+      - ./data:/app/data
+    networks:
+      - db_network
+
 networks:
   db_network:
 
