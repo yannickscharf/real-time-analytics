@@ -1,10 +1,12 @@
 # real-time-analytics
 
+The purpuse of the project is to process and monitor real-time data from production processes.
+
 ## Getting Started
 
 Download and install the latest available version of Docker Compose https://docs.docker.com/compose/install/
 
-### Clone repository and start docker containers
+## Clone repository and start docker containers
 
 
 ```sh
@@ -19,7 +21,7 @@ docker-compose up
 docker-compose up -d (for detached mode)
 ```
 
-### Mapped Ports
+## Mapped Ports
 
 The services run on the following ports:
 ```
@@ -30,7 +32,7 @@ Host	   Container        Service
 8080		8080        adminer
 ```
 
-### Adminer
+## Adminer
 
 Open Adminer to view the database:
 
@@ -43,7 +45,7 @@ Username: postgres
 Password: example
 ```
 
-### Grafana
+## Grafana
 
 Open Grafana to visualize the data:
 
