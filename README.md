@@ -2,41 +2,39 @@
 
 ## Getting Started
 
-1. Download and install the latest available version of Docker Compose https://docs.docker.com/compose/install/
+Download and install the latest available version of Docker Compose https://docs.docker.com/compose/install/
 
-2. Clone the repository:
+### Clone repository and start docker containers
+
 
 ```sh
 git clone git@github.com:yannickscharf/real-time-analytics.git
 cd real-time-analytics
 ```
 
-3. Build and start the services using Docker Compose:
+Build and start the services using Docker Compose:
 
 ```sh
 docker-compose up
+docker-compose up -d (for detached mode)
 ```
 
-Or to run in detached mode:
+### Mapped Ports
 
-```sh
-docker-compose up -d
+The services run on the following ports:
 ```
-
-4. Mapped Ports
-
-```
-Host	   Container   Service
+Host	   Container        Service
 
 3000		3000        grafana
 5432		5432        postgres
 8080		8080        adminer
 ```
 
-5. Open Adminer to view the database:
+### Adminer
 
-Navigate to `http://localhost:8080`
-Connect to the database with the following credentials:
+Open Adminer to view the database:
+
+Navigate to `http://localhost:8080`. Connect to the database with the following credentials:
 
 ```sh
 System: PostgreSQL
@@ -45,10 +43,11 @@ Username: postgres
 Password: example
 ```
 
-6. Open Grafana to visualize the data:
+### Grafana
 
-Navigate to `http://localhost:3000`
-Log in with the following credentials:
+Open Grafana to visualize the data:
+
+Navigate to `http://localhost:3000`. Log in with the following credentials:
 
 ```sh
 Username: grafana
