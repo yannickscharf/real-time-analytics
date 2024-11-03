@@ -1,0 +1,14 @@
+# Configuration file version
+apiVersion: 1
+
+datasources:
+  - name: PostgreSQL
+    type: postgres
+    access: proxy
+    url: postgres:5432
+    database: postgres
+    user: postgres
+    password: example
+    isDefault: true
+    jsonData:
+      sslmode: disable
