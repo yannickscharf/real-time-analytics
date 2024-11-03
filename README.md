@@ -2,7 +2,7 @@
 
 The purpuse of the project is to process and monitor real-time data from production processes.
 
-## Getting Started
+## Prerequisite
 
 Download and install the latest available version of Docker Compose https://docs.docker.com/compose/install/
 
