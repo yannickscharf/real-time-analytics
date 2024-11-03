@@ -1,56 +1,83 @@
 # real-time-analytics
 
-## Prerequisites
-
-- Docker
-- Docker Compose
-
 ## Getting Started
 
-1. Clone the repository:
+1. Download and install the latest available version of Docker Compose https://docs.docker.com/compose/install/
 
-   ```sh
-   git clone <repository-url>
-   cd real-time-analytics
-   ```
+2. Clone the repository:
 
-2. Build and start the services using Docker Compose:
+```sh
+git clone git@github.com:yannickscharf/real-time-analytics.git
+cd real-time-analytics
+```
 
-   ```sh
-   docker-compose up
-   ```
+3. Build and start the services using Docker Compose:
 
-   Or to run in detached mode:
+```sh
+docker-compose up
+```
 
-   ```sh
-   docker-compose up -d
-   ```
+Or to run in detached mode:
 
-3. Open Adminer to view the database:
+```sh
+docker-compose up -d
+```
 
-   - Navigate to `http://localhost:8080`
-   - Connect to the database with the following credentials:
-     - **System**: PostgreSQL
-     - **Server**: postgres (service name defined in [docker-compose.yml](http://_vscodecontentref_/1))
-     - **Username**: postgres (default PostgreSQL superuser)
-     - **Password**: example (defined in [docker-compose.yml](http://_vscodecontentref_/2))
+4. Mapped Ports
 
-4. Open Grafana to visualize the data:
-   - Navigate to `http://localhost:3000`
-   - Log in with the following credentials:
-     - **Username**: grafana
-     - **Password**: grafana
+```
+Host	   Container   Service
+
+3000		3000        grafana
+5432		5432        postgres
+8080		8080        adminer
+```
+
+5. Open Adminer to view the database:
+
+Navigate to `http://localhost:8080`
+Connect to the database with the following credentials:
+
+```sh
+System: PostgreSQL
+Server: postgres
+Username: postgres
+Password: example
+```
+
+6. Open Grafana to visualize the data:
+
+Navigate to `http://localhost:3000`
+Log in with the following credentials:
+
+```sh
+Username: grafana
+Password: grafana
+```
+
+In order to add a new datasource open the sidebar menu in Grafana.
+Select Connections and click on Datasources.
+Add a new datasource and select PostgreSQL in the List.
+Enter the following credentials:
+
+```sh
+Host URL: postgres:5432
+Database name: postgres
+Username: postgres
+Password: example
+TLS/SSL Mode: disable
+```
 
 ## Ending the Service
 
-To stop and remove the Docker containers, run:
-
-```sh
-docker-compose down
-```
-
-Or to stop the containers without removing them:
+To stop the containers without removing them:
 
 ```sh
 docker-compose stop
+```
+
+Or to stop and remove the Docker containers, run:
+
+```sh
+docker-compose down
 ```
