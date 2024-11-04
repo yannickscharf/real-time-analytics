@@ -8,7 +8,6 @@ Download and install the latest available version of Docker Compose https://docs
 
 ## Clone repository and start docker containers
 
-
 ```sh
 git clone git@github.com:yannickscharf/real-time-analytics.git
 cd real-time-analytics
@@ -24,12 +23,13 @@ docker-compose up -d (for detached mode)
 ## Mapped Ports
 
 The services run on the following ports:
-```
-Host	   Container        Service
 
-3000		3000        grafana
-5432		5432        postgres
-8080		8080        adminer
+```md
+| Host | Container | Service  |
+| ---- | --------- | -------- |
+| 3000 | 3000      | grafana  |
+| 5432 | 5432      | postgres |
+| 8080 | 8080      | adminer  |
 ```
 
 ## Adminer
@@ -58,7 +58,7 @@ Password: grafana
 
 In order to add a new datasource open the sidebar menu in Grafana.
 Select Connections and click on Datasources.
-Add a new datasource and select PostgreSQL in the List.
+Add a new datasource and select PostgreSQL in the list.
 Enter the following credentials:
 
 ```sh
@@ -71,13 +71,7 @@ TLS/SSL Mode: disable
 
 ## Ending the Service
 
-To stop the containers without removing them:
-
-```sh
-docker-compose stop
-```
-
-Or to stop and remove the Docker containers, run:
+To stop and remove the containers use the following command:
 
 ```sh
 docker-compose down
