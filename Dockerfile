@@ -2,7 +2,7 @@ FROM python:latest
 
 WORKDIR /app
 
-# Install dependencies
+# Copy and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -11,4 +11,4 @@ COPY ./scripts /app/scripts
 COPY ./data /app/data
 
 # Start command
-ENTRYPOINT ["python", "scripts/main.py"]
+ENTRYPOINT ["bash"]

@@ -42,9 +42,11 @@ services:
     networks:
       - db_network
 
-  data-processor:
-    build: .
-    container_name: data-processor
+  python-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: python-runner
     depends_on:
       postgres:
         condition: service_healthy
@@ -53,6 +55,7 @@ services:
       - ./data:/app/data
     networks:
       - db_network
+    entrypoint: ["tail", "-f", "/dev/null"]
 
 networks:
   db_network:

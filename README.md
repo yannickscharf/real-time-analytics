@@ -32,6 +32,22 @@ The services run on the following ports:
 | 8080 | 8080      | adminer  |
 ```
 
+## Create tables and insert data
+
+There's a python runner container that allows you to execute commands.
+To access the containers shell use the following command:
+
+```sh
+docker exec -it python-runner bash
+```
+
+Run the following scripts to create the tables and insert the data into the PostgreSQL database:
+
+```sh
+python scripts/create_tables.py
+python scripts/insert_data.py
+```
+
 ## Adminer
 
 Open Adminer to view the database:
